@@ -1,0 +1,12 @@
+<div class="col-xs-12">
+
+  <img src={{item.owner.avatar_url}} alt={{item.full_name}} />
+  <br/>
+  Name:
+  <a target="_blank" href="{{item.html_url}}">{{item.full_name}}</a>
+  <br/> Language: {{item.language}}
+  <!-- <br/> {{item.description}} -->
+  <br/>
+  <button *ngIf="mode=='search'" (click)="addBookmark_click(item)">Add to Bookmark</button>
+
+</div>

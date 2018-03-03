@@ -1,0 +1,17 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+  <h1>
+    Welcome to {{ title }}!
+  </h1>
+  <input type="text" [(ngModel)]="searchText" placeholder="Search" class="center" (keydown)="Keydown($event)" />
+  <button (click)="Search_Click()" [disabled]="searchText.length<1">Search</button>
+  <button (click)="BookMark_Click()">My Bookmark</button>
+</div>
+
+<ng-container *ngIf="dataFromGitHub"> <!--Show this container if have data from github or bookmark  -->
+  <h2>Here are links from {{mode}}: </h2>
+  <div  *ngFor="let item of dataFromGitHub.items" >
+    <ItemTemplate  class="col-xs-12 col-sm-6 col-md-4 col-lg-2 col-xl-1" [item]="item" [mode]="mode"></ItemTemplate>
+    
+  </div>
+</ng-container>
